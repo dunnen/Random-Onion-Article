@@ -1,15 +1,14 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
 import feedparser
 import random
 
-onion_url = "http://feeds.theonion.com/onionnewsnetwork"
+onion_url = 'http://www.theonion.com/feeds/rss'
 
 feed = feedparser.parse( onion_url )
 
-entries = []
-entries.extend(feed["items"])
+items = feed['items']
 
-random_article = random.randint(0, len(entries)-1)
+random_article = random.randint(0, len(items)-1)
 
-print entries[random_article]["title"]
+print(items[random_article]["title"])
